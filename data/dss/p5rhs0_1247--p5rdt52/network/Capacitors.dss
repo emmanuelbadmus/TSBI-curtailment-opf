@@ -1,0 +1,3 @@
+New Capacitor.p5rc4 bus1=p5rdt52 phases=3 Kv=12.47 conn=Wye Kvar=600.0
+
+New CapControl.p5rc4 Capacitor=p5rc4 Element=Line.l(r:p5rdt52-p5rhs0_1247)_s1 Terminal=1 delay=100.0 Type=voltage Vmin=120.5 Vmax=125.0 Ptratio=59.99631547328862 Ctratio=100.0

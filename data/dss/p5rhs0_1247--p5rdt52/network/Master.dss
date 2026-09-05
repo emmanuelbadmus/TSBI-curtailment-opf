@@ -1,0 +1,29 @@
+Clear
+
+New Circuit.feeder_p5rdt52-p5rhs0_1247x bus1=p5rdt52-p5rhs0_1247x pu=1.03 basekV=12.47 R1=1e-05 X1=1e-05 R0=1e-05 X0=1e-05
+
+Redirect LineCodes.dss
+Redirect Lines.dss
+Redirect Transformers.dss
+Redirect Loads.dss
+Redirect Capacitors.dss
+Redirect PVSystems.dss
+new monitor.m1 element=Line.l(r:p5rdt52-p5rhs0_1247)_s1 mode=0
+new monitor.m2 element=Line.l(r:p5rdt52-p5rhs0_1247)_s1 mode=1
+new energymeter.m3 Line.l(r:p5rdt52-p5rhs0_1247)_s1
+
+Set Voltagebases=[0.48, 12.47]
+
+Calcvoltagebases
+
+Buscoords Buscoords.dss
+set maxcontroliter=50
+
+Set ControlMode=OFF
+Set ControlMode=OFF
+Solve mode=Snapshot
+!Export monitors m1
+!Plot monitor object= m1 channels=(7 9 11 )
+!Export monitors m2
+!Plot monitor object= m2 channels=(1 3 5 )
+!Plot Profile Phases=All

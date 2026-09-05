@@ -1,0 +1,17 @@
+New PVSystem.pv_load_p5rlv241 bus1=p5rlv241.1.2.3 phases=3 kV=0.48 kVA=2.727272727272727 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=1.0 irradiance=1
+New PVSystem.pv_load_p5rlv127 bus1=p5rlv127.1.2.3 phases=3 kV=0.48 kVA=2.727272727272727 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=1.0 irradiance=1
+New PVSystem.pv_load_p5rlv130 bus1=p5rlv130.1.2.3 phases=3 kV=0.48 kVA=2.727272727272727 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=1.0 irradiance=1
+New PVSystem.pv_load_p5rlv133 bus1=p5rlv133.1.2.3 phases=3 kV=0.48 kVA=2.727272727272727 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=1.0 irradiance=1
+New PVSystem.pv_load_p5rlv16 bus1=p5rlv16.1.2.3 phases=3 kV=0.48 kVA=2.727272727272727 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=1.0 irradiance=1
+New PVSystem.pv_load_p5rlv289 bus1=p5rlv289.1.2.3 phases=3 kV=0.48 kVA=2.727272727272727 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=1.0 irradiance=1
+New PVSystem.pv_load_p5rlv238 bus1=p5rlv238.1.2.3 phases=3 kV=0.48 kVA=2.727272727272727 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=1.0 irradiance=1
+New PVSystem.pv_load_p5rlv284 bus1=p5rlv284.1.2.3 phases=3 kV=0.48 kVA=2.8708133971291865 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=-0.95 irradiance=1
+New PVSystem.pv_load_p5rlv297 bus1=p5rlv297.1.2.3 phases=3 kV=0.48 kVA=2.8708133971291865 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=-0.95 irradiance=1
+New PVSystem.pv_load_p5rlv134 bus1=p5rlv134.1.2.3 phases=3 kV=0.48 kVA=2.8708133971291865 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=-0.95 irradiance=1
+New PVSystem.pv_load_p5rlv131 bus1=p5rlv131.1.2.3 phases=3 kV=0.48 kVA=2.8708133971291865 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=-0.95 irradiance=1
+New PVSystem.pv_load_p5rlv24 bus1=p5rlv24.1.2.3 phases=3 kV=0.48 kVA=2.8708133971291865 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=-0.95 irradiance=1
+New PVSystem.pv_load_p5rlv18 bus1=p5rlv18.1.2.3 phases=3 kV=0.48 kVA=2.8708133971291865 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=-0.95 irradiance=1
+New PVSystem.pv_load_p5rlv21 bus1=p5rlv21.1.2.3 phases=3 kV=0.48 kVA=2.8708133971291865 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=-0.95 irradiance=1
+New PVSystem.pv_load_p5rlv126 bus1=p5rlv126.1.2.3 phases=3 kV=0.48 kVA=2.8708133971291865 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=-0.95 irradiance=1
+New PVSystem.pv_load_p5rlv288 bus1=p5rlv288.1.2.3 phases=3 kV=0.48 kVA=2.8708133971291865 Pmpp=3.0 %Cutout=0.1 %Cutin=0.1 Model=1 pf=-0.95 irradiance=1
+

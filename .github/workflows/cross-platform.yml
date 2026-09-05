@@ -1,0 +1,69 @@
+name: cross-platform check
+
+# The study's hardest bug was two Ipopt builds disagreeing, and development
+# happens on macOS, so the environment is built and run on real Linux and
+# Windows machines here rather than assumed to work. This is a smoke test, not
+# the published run: it solves the L2 cases of two feeders. Manual by default
+# because Windows minutes bill at twice the rate; the push trigger fires only
+# when the environment or the solver code changes.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "environment.yml"
+      - "src/**"
+      - "run_curtailment_study.py"
+      - "converters/**"
+
+jobs:
+  solve:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: environment.yml
+          cache-environment: true
+
+      # --check also reports which of Ipopt's linear solvers this platform's
+      # build can load, which is what --solver can be set to here.
+      - name: Report what this platform resolved to
+        run: |
+          python -c "import sys; print('python  ', sys.version.split()[0])"
+          ipopt --version | head -1
+          python -c "import powerio; print('powerio ', powerio.__version__)"
+          python run_curtailment_study.py --check
+
+      - name: Lint and format
+        run: |
+          ruff check .
+          ruff format --check .
+
+      # 4bus alone does not exercise conversion of the harder feeders: a
+      # powerio change once dropped J1's regulators and left its base power
+      # flow infeasible while every 4bus case still passed. The study inputs
+      # are generated, so this also builds them on this platform first.
+      - name: Solve 4bus and J1
+        run: |
+          python run_curtailment_study.py --case 4bus_120v --case J1 \
+            --norm L2 --no-plot --out results/ci_check.json
+
+      # The conversion reads the feeder's electrics back out of OpenDSS, so it
+      # depends on a native binary that differs by platform. Agreement is
+      # checked here rather than assumed to travel from the machine that
+      # published the results.
+      - name: Check the conversion against OpenDSS
+        run: |
+          python converters/validate_against_opendss.py \
+            --case 4bus_120v --case P

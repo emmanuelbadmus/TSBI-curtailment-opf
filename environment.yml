@@ -1,0 +1,24 @@
+# The environment this study runs in. Includes Ipopt, the native solver binary
+# that is the reason a plain pip install is not enough.
+#
+#   conda env create -f environment.yml
+#   conda activate inverter-distribution-opf
+#   python run_curtailment_study.py
+name: inverter-distribution-opf
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12.*
+  - numpy>=2.3.5,<2.4
+  - pyomo>=6.10.0
+  - matplotlib-base>=3.10.0   # the study renders with Agg, so no GUI stack
+  - ipopt>=3.14               # the native solver binary pip cannot install
+  - ruff>=0.16.5,<0.17        # lint and format, configured in pyproject.toml
+  - pip
+  - pip:
+      # Pinned below 0.9: 0.10 emits a transformer section the parser does not
+      # read, which silently drops J1's voltage regulators.
+      - powerio>=0.8.2,<0.9
+      # OpenDSS itself: the converter reads the line, load, shunt and source
+      # electrics back from it, and the validation solves against it.
+      - OpenDSSDirect.py>=0.9,<0.10

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Tooling
+.ruff_cache/
+.pytest_cache/
+.DS_Store
+
+# The 120 scenarios are generated: each embeds a copy of its feeder network,
+# so tracking them would carry every feeder in twenty-four times over. The
+# converted networks they are built from are tracked, because generating a
+# scenario needs only the standard library, while producing a network needs
+# OpenDSS and powerio. Solving the study therefore never requires either.
+data/bmopf_json/*/scenarios/
+
+# Outputs of partial runs; the published results beside them are tracked
+results/ci_check.json
+results/*_runtime.csv
+!results/runtime_table.csv

@@ -1,0 +1,13 @@
+{
+  "label": "4bus 120V",
+  "terminals": [
+    "n4.1",
+    "n4.2",
+    "n4.3"
+  ],
+  "repeats": 1,
+  "voltage_magnitude_limits_relative_to_base_case": {
+    "minimum": 0.95,
+    "maximum": 1.005
+  }
+}

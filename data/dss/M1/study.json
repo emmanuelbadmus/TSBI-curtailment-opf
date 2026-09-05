@@ -1,0 +1,7 @@
+{
+  "label": "M1",
+  "terminal_selection": "top_positive_load_terminals",
+  "selection_count": 161,
+  "exclude_aggregate": true,
+  "repeats": 8
+}

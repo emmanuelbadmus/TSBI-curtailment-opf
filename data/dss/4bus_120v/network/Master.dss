@@ -1,0 +1,44 @@
+clear
+Set DefaultBaseFrequency=60
+
+! Low-voltage version of the IEEE 4-bus Y-Y balanced test feeder.
+! The n3/n4 secondary is 208 V line-to-line, approximately 120 V
+! line-to-neutral, so a 120 V single-phase inverter can connect directly.
+
+new circuit.4Bus120V basekV=12.47 phases=3
+~ mvasc3=200000 mvasc1=200000
+
+set earthmodel=carson
+
+! Conductors and four-wire geometry retained from the original 4-bus case.
+new wiredata.conductor Runits=mi Rac=0.306 GMRunits=ft GMRac=0.0244 Radunits=in Diam=0.721 normamps=530
+new wiredata.neutral Runits=mi Rac=0.592 GMRunits=ft GMRac=0.00814 Radunits=in Diam=0.563 normamps=340
+
+new linegeometry.4wire nconds=4 nphases=3 reduce=yes
+~ cond=1 wire=conductor units=ft x=-4 h=28
+~ cond=2 wire=conductor units=ft x=-1.5 h=28
+~ cond=3 wire=conductor units=ft x=3 h=28
+~ cond=4 wire=neutral units=ft x=0 h=24
+
+! Primary feeder section.
+new line.line1 geometry=4wire length=2000 units=ft bus1=sourcebus bus2=n2
+
+! 12.47 kV / 208 V grounded-wye secondary transformer.
+! A 30 kVA rating supports one 5.8 kVA inverter per phase.
+new transformer.t1 phases=3 windings=2 xhl=6
+~ wdg=1 bus=n2 conn=wye kV=12.47 kVA=30 %r=0.5
+~ wdg=2 bus=n3 conn=wye kV=0.208 kVA=30 %r=0.5
+
+! Low-voltage secondary feeder section.
+new line.line2 bus1=n3 bus2=n4 geometry=4wire length=250 units=ft
+
+! Balanced 5.4 kW load at the 208 V LL / 120 V LN inverter bus.
+new load.load1 phases=3 bus1=n4 conn=wye kV=0.208 kW=5.4 pf=0.9 model=1
+! Hold the load constant-power across the band the study constrains, so
+! the load model never switches to constant impedance inside it.
+~ vminpu=0.95 vmaxpu=1.005
+
+set voltagebases=[12.47, 0.208]
+calcvoltagebases
+Set ControlMode=OFF
+solve

@@ -1,0 +1,15 @@
+{
+  "label": "P",
+  "exclude_aggregate": true,
+  "groups": [
+    {
+      "terminal_selection": "all_positive_load_terminals",
+      "repeats": 1
+    },
+    {
+      "terminal_selection": "top_positive_load_terminals",
+      "selection_count": 100,
+      "repeats": 1
+    }
+  ]
+}

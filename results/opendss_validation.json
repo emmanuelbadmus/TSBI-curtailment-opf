@@ -1,0 +1,57 @@
+[
+  {
+    "case": "4bus_120v",
+    "compared_nodes": 12,
+    "missing_from_model": 0,
+    "unexplained_extra": 0,
+    "mean_relative_error": 1.540997412475123e-08,
+    "max_relative_error": 3.078801327375121e-08,
+    "worst_node": "n4.2",
+    "worst_opendss_v": 118.8493213013211,
+    "worst_model_v": 118.84932479531207
+  },
+  {
+    "case": "J1",
+    "compared_nodes": 4245,
+    "missing_from_model": 0,
+    "unexplained_extra": 0,
+    "mean_relative_error": 0.0009489813145927133,
+    "max_relative_error": 0.0020398763330391457,
+    "worst_node": "x_b19003_cust1-c.3",
+    "worst_opendss_v": 232.6177475304081,
+    "worst_model_v": 232.88405560631054
+  },
+  {
+    "case": "M1",
+    "compared_nodes": 3153,
+    "missing_from_model": 0,
+    "unexplained_extra": 0,
+    "mean_relative_error": 0.0001443722659333938,
+    "max_relative_error": 0.0007543754086362626,
+    "worst_node": "0x008d01e0_drop-98-6.2",
+    "worst_opendss_v": 227.81642916500556,
+    "worst_model_v": 227.98813731108305
+  },
+  {
+    "case": "P",
+    "compared_nodes": 368,
+    "missing_from_model": 0,
+    "unexplained_extra": 0,
+    "mean_relative_error": 0.002945212022717144,
+    "max_relative_error": 0.007297389814526006,
+    "worst_node": "3096183.1",
+    "worst_opendss_v": 229.14344307446268,
+    "worst_model_v": 229.57567680524605
+  },
+  {
+    "case": "p5rhs0_1247--p5rdt52",
+    "compared_nodes": 492,
+    "missing_from_model": 0,
+    "unexplained_extra": 0,
+    "mean_relative_error": 0.0005685903466165773,
+    "max_relative_error": 0.0008345317221302764,
+    "worst_node": "p5rlv330.3",
+    "worst_opendss_v": 283.67952614150926,
+    "worst_model_v": 283.8225075193401
+  }
+]

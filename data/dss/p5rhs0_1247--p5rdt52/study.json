@@ -1,0 +1,7 @@
+{
+  "label": "p5rhs0",
+  "repeats": 8,
+  "terminal_selection": "top_positive_load_terminals",
+  "selection_count": 165,
+  "exclude_aggregate": true
+}

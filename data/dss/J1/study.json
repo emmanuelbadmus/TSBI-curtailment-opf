@@ -1,0 +1,25 @@
+{
+  "label": "J1",
+  "exclude_aggregate": true,
+  "groups": [
+    {
+      "terminal_selection": "all_positive_load_terminals",
+      "repeats": 2
+    },
+    {
+      "terminals": [
+        "X_G36562_Cust1-C.3",
+        "X_G36562_Cust1-C.3",
+        "X_G36562_Cust1-C.3",
+        "X_G36562_Cust1-C.3",
+        "X_G36562_Cust2-C.3",
+        "X_G36562_Cust2-C.3",
+        "X_G36562_Cust2-C.3",
+        "X_G36562_Cust3-C.3",
+        "X_G36562_Cust3-C.3",
+        "X_G36562_Cust3-C.3"
+      ],
+      "repeats": 1
+    }
+  ]
+}
